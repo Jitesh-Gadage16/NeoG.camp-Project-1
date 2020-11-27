@@ -1,7 +1,6 @@
 
 
 //ex.02 : read the name of your user
-
 var readlineSync = require('readline-sync');
 const chalk = require('chalk');
 
@@ -29,7 +28,7 @@ console.log(welcomeMsg)
 
 var score = 0 ;
 
-function playGame(UserQuestion   , correctAnswer){
+function playGame(UserQuestion   , /n correctAnswer){
   var questions = readlineSync.question(UserQuestion);
 
   if(questions === correctAnswer){
@@ -50,33 +49,32 @@ function playGame(UserQuestion   , correctAnswer){
 
 
  var Game = [{
-  Question : `How Many Teams are there in IPL 2020..?
-  a: 7
-  b: 8
-  c: 10`,
+  Question : `In which city do I live..? 
+  a: Mumbai
+  b: Navi Mumbai
+  c: Thane`,
   Answer : "b",
   
 },
 {
-  Question : `Who won the IPL 2020..?
-  a: Delhi Capitals
-  b: Kings XI Panjab
-  c: Mumbai Indians`,
-  Answer : "c",
-},
-{
-  Question : `Who was the Orange Cap Holdar
-  a: Quinton de Kock
-  b: Kl Rahul
-  c: Shikar Dhawan`,
+  Question : `What do I love the Most.?
+  a: Coffe
+  b: Chai
+  c: Both a and b`,
   Answer : "b",
 },
 {
-  Question : `Who was the Purple Cap Holdar..?
-  a: Jasprit Bhumrha
-  b: Trent Bolt
-  c: Kagiso Rabada`,
+  Question : `What do I love to play..?
+  a: Football
+  b: Vallyball
+  c: Cricket`,
   Answer : "c",
+},
+{
+  Question : `What do you think am I single or In Relationship..😂😂
+  a: Single
+  b: Relationship`,
+  Answer : "a",
 },
 {
   Question : `Where was the IPL 2020 conducted..?
