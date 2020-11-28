@@ -12,6 +12,9 @@ var welcomeMsg = `Hey ${chalk.bold.white.bgYellow(username)} Welcome!!! Good to 
 console.log(welcomeMsg)
   console.log(chalk.red("---------------------------------------------"))
 
+  console.log(chalk.bgWhite.bold.black("This is a Small Fun Quiz Which will test How well do you know Me."))
+  console.log(chalk.red("----- x ----- x ---- x ----- x ---- x ----- x --"))
+
 // console.log(chalk.blue.underline(welcomeMsg))
 
 //End Game 
@@ -28,17 +31,17 @@ console.log(welcomeMsg)
 
 var score = 0 ;
 
-function playGame(UserQuestion   , /n correctAnswer){
-  var questions = readlineSync.question(UserQuestion);
-
+function playGame(UserQuestion , correctAnswer){
+  var questions =readlineSync.question(chalk.bold.cyan(UserQuestion));
+  
   if(questions === correctAnswer){
     console.log(chalk.bold.black.bgGreen("Yes it's Right..!!"));
-    score++;
+    score+=2;
   console.log(chalk.red("------------------"))
 
   }else{
     console.log( chalk.bgRed("It's wrong.."));
-    score--;
+    score-=2;
 
   }
     console.log("your score is " + score);
@@ -52,7 +55,7 @@ function playGame(UserQuestion   , /n correctAnswer){
   Question : `In which city do I live..? 
   a: Mumbai
   b: Navi Mumbai
-  c: Thane`,
+  c: Thane `,
   Answer : "b",
   
 },
@@ -71,24 +74,26 @@ function playGame(UserQuestion   , /n correctAnswer){
   Answer : "c",
 },
 {
+  Question : `Which one is my Favraouit..?
+  a: Pizza
+  b: Burger
+  c: Biryani`,
+  Answer : "a",
+},
+{
   Question : `What do you think am I single or In Relationship..😂😂
   a: Single
   b: Relationship`,
   Answer : "a",
 },
-{
-  Question : `Where was the IPL 2020 conducted..?
-  a: dubai
-  b: India
-  c: England`,
-  Answer : "a",
-},
+
 
 ]
 
 for(var i = 0; i < Game.length; i++){
   var currentQuestion = Game[i]
-  playGame(currentQuestion.Question + ` `,currentQuestion.Answer )
+
+  playGame(currentQuestion.Question +` `, currentQuestion.Answer )
   
   console.log(chalk.red("------------------"))
 
