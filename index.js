@@ -10,41 +10,41 @@ var username = readlineSync.question("what is your name.?");
 var welcomeMsg = `Hey ${chalk.bold.white.bgYellow(username)} Welcome!!! Good to see you here...` 
 
 console.log(welcomeMsg)
+console.log("  ")
+
+  console.log(chalk.bgWhiteBright.bold.black("This is a Small Fun Quiz Which will test How well do you know Me."))
+   console.log(" ")
+
+
+
+var UserIntrest =  readlineSync.question("Are you ready to play my CLI Game..?");
+  console.log(chalk.red("--------------------------------------------"))
+
+if(UserIntrest == "yes"){
+  console.log(chalk.bgYellowBright.bold.black("ALl the best and try to enjoy the game..!!!"))
   console.log(chalk.red("---------------------------------------------"))
-
-  console.log(chalk.bgWhite.bold.black("This is a Small Fun Quiz Which will test How well do you know Me."))
-  console.log(chalk.red("----- x ----- x ---- x ----- x ---- x ----- x --"))
-
-// console.log(chalk.blue.underline(welcomeMsg))
-
-//End Game 
-
-// var UserIntrest =  readlineSync.question("Are you ready to play my CLI Game..?");
-
-// if(UserIntrest == "yes"){
-//   console.log("ALl the best and try to enjoy the game..!!!")
-//   console.log(chalk.red("---------------------------------------------"))
-// }else{
-//   console.log("Okay..!! Then to You have to Play the game...hahah")
-//    console.log(chalk.red("--------------------------------------------"))
-// }
+}else{
+  console.log("Okay..!! Then to You have to Play the game...hahah")
+   console.log(chalk.red("--------------------------------------------"))
+}
 
 var score = 0 ;
 
 function playGame(UserQuestion , correctAnswer){
-  var questions =readlineSync.question(chalk.bold.cyan(UserQuestion));
+  var questions =readlineSync.question(chalk.bold.cyanBright(UserQuestion));
   
   if(questions === correctAnswer){
     console.log(chalk.bold.black.bgGreen("Yes it's Right..!!"));
     score+=2;
-  console.log(chalk.red("------------------"))
+  console.log(chalk.red("-----------------------------"))
 
   }else{
     console.log( chalk.bgRed("It's wrong.."));
     score-=2;
+      console.log(chalk.red("-------------------------"))
 
   }
-    console.log("your score is " + score);
+    console.log("Your score is " + score);
 
 }
 
@@ -61,7 +61,7 @@ function playGame(UserQuestion , correctAnswer){
 },
 {
   Question : `What do I love the Most.?
-  a: Coffe
+  a: Coffie
   b: Chai
   c: Both a and b`,
   Answer : "b",
@@ -95,9 +95,11 @@ for(var i = 0; i < Game.length; i++){
 
   playGame(currentQuestion.Question +` `, currentQuestion.Answer )
   
-  console.log(chalk.red("------------------"))
+   console.log(chalk.red("-----------------------------"))
+  
 
   }
+  console.log(chalk.bgYellowBright.bold.black("congrats..!! Your final score is " + score))
   console.log("Thank you for Playing..!!! send Me the screenshot of your final score")
   
 
