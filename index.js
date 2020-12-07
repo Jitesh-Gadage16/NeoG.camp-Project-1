@@ -100,6 +100,7 @@ for(var i = 0; i < Game.length; i++){
 
   }
   console.log(chalk.bgYellowBright.bold.black("congrats..!! Your final score is " + score))
+  console.log("  ")
   console.log("Thank you for Playing..!!! send Me the screenshot of your final score")
   
 
